@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script>
+  function enforceMobile() {
+    if (window.innerWidth >= 768) {
+      window.location.replace("desktop responsive.html" + window.location.hash);
+    }
+  }
+  enforceMobile();
+  window.addEventListener('resize', enforceMobile);
+</script>
+<title>The Looks Family Salon | Bareilly, Uttar Pradesh</title>
+<!-- Google Fonts: Playfair Display & Manrope & Be Vietnam Pro -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#ffffff",
+            "surface-variant": "#e4e2df",
+            "on-tertiary-fixed-variant": "#5e402a",
+            "on-surface": "#1b1c1a",
+            "border-medium": "rgba(43, 33, 30, 0.16)",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#e8bea1",
+            "on-tertiary-fixed": "#2c1604",
+            "on-primary-fixed": "#231917",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#30312f",
+            "surface-tint": "#695b58",
+            "surface-dim": "#dbdad7",
+            "inverse-on-surface": "#f2f0ed",
+            "surface-bright": "#fbf9f6",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed": "#ffdcc4",
+            "accent-rose-muted": "#A4756A",
+            "blur-orb-rose": "rgba(164, 117, 106, 0.18)",
+            "on-primary-container": "#968783",
+            "primary": "#140c09",
+            "error-container": "#ffdad6",
+            "text-primary": "#2B211E",
+            "secondary-container": "#ffd4c5",
+            "surface-container-low": "#f5f3f0",
+            "border-accent": "rgba(194, 155, 127, 0.45)",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#a88368",
+            "text-tertiary": "#8A7E77",
+            "primary-fixed-dim": "#d4c3be",
+            "tertiary-container": "#351e0a",
+            "on-surface-variant": "#4e4542",
+            "surface-raised": "#F4EFEA",
+            "surface-dark": "#1C1615",
+            "scrim-overlay": "rgba(28, 22, 21, 0.48)",
+            "secondary-fixed": "#ffdbcf",
+            "outline-variant": "#d2c3c0",
+            "tertiary": "#1b0900",
+            "accent-champagne": "#C29B7F",
+            "on-secondary-container": "#7a594e",
+            "secondary-fixed-dim": "#e7bdaf",
+            "on-secondary": "#ffffff",
+            "inverse-primary": "#d4c3be",
+            "primary-container": "#2b211e",
+            "blur-orb-warm": "rgba(194, 155, 127, 0.22)",
+            "outline": "#807571",
+            "background": "#fbf9f6",
+            "text-inverse": "#FAF8F5",
+            "on-background": "#1b1c1a",
+            "border-subtle": "rgba(43, 33, 30, 0.08)",
+            "text-secondary": "#635650",
+            "on-primary-fixed-variant": "#504441",
+            "primary-fixed": "#f1dfd9",
+            "on-secondary-fixed": "#2c160d",
+            "surface-container": "#efeeeb",
+            "on-secondary-fixed-variant": "#5d4035",
+            "secondary": "#77574c",
+            "on-error": "#ffffff",
+            "surface-container-highest": "#e4e2df",
+            "surface-container-high": "#eae8e5",
+            "surface-card": "rgba(255, 255, 255, 0.72)",
+            "surface": "#fbf9f6",
+            "surface-base": "#FAF8F5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-3": "1.5rem",
+            "space-8": "4rem",
+            "space-1-5": "0.75rem",
+            "container-max": "80rem",
+            "space-4": "2rem",
+            "space-2": "1rem",
+            "gutter-mobile": "1rem",
+            "space-6": "3rem",
+            "touch-target-min": "2.75rem",
+            "gutter-tablet": "1.5rem",
+            "space-12": "6rem",
+            "space-1": "0.5rem",
+            "gutter-desktop": "2rem",
+            "space-0-5": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Playfair Display"],
+            "body-md": ["Manrope"],
+            "body-sm": ["Manrope"],
+            "label-lg": ["Manrope"],
+            "headline-lg": ["Playfair Display"],
+            "label-sm": ["Manrope"],
+            "display-hero-mobile": ["Playfair Display"],
+            "title-lg": ["Manrope"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "body-lg": ["Manrope"],
+            "display-hero": ["Playfair Display"],
+            "title-md": ["Manrope"],
+            "headline-md": ["Playfair Display"],
+            "label-md": ["Manrope"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    /* Textured editorial background with subtle fine noise emulation */
+    .bg-editorial-texture {
+      background-color: #FAF8F5;
+      background-image: radial-gradient(at 0% 0%, rgba(194, 155, 127, 0.08) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(164, 117, 106, 0.06) 0px, transparent 50%),
+                        linear-gradient(180deg, #FAF8F5 0%, #F5F3F0 100%);
+    }
+  </style>
+<style>
+/* ============================================================
+   MICRO-ANIMATIONS — pure CSS, no external libs
+   GPU-composited (transform + opacity only) → low-end safe
+   ============================================================ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+}
+@keyframes fadeUp  { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:none} }
+@keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+@keyframes subtlePulse { 0%,100%{box-shadow:0 0 0 0 rgba(194,155,127,.3)} 50%{box-shadow:0 0 0 5px rgba(194,155,127,0)} }
+
+/* Scroll reveal */
+.reveal-base {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .5s cubic-bezier(.4,0,.2,1), transform .5s cubic-bezier(.4,0,.2,1);
+  will-change: opacity, transform;
+}
+.reveal-base.reveal-visible { opacity: 1; transform: none; will-change: auto; }
+
+/* Stagger for .reveal-child */
+.reveal-child:nth-child(1){transition-delay:.06s}
+.reveal-child:nth-child(2){transition-delay:.12s}
+.reveal-child:nth-child(3){transition-delay:.18s}
+.reveal-child:nth-child(4){transition-delay:.24s}
+.reveal-child:nth-child(5){transition-delay:.30s}
+
+/* Header scroll effect */
+header { transition: box-shadow .3s ease; }
+header.is-scrolled { box-shadow: 0 2px 20px rgba(43,33,30,.12); }
+
+/* Button micro-press & hover */
+.btn-animate { 
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease !important; 
+  will-change: transform;
+}
+@media(hover: hover) {
+  .btn-animate:hover { transform: scale(1.03) !important; box-shadow: 0 6px 16px rgba(0,0,0,0.08) !important; filter: brightness(1.05); }
+}
+.btn-animate:active { transform: scale(.96) !important; }
+
+/* Card Hover Lift */
+.hover-lift { transition: transform .25s ease-out, box-shadow .25s ease-out !important; }
+@media(hover: hover) {
+  .hover-lift:hover { transform: translateY(-4px) !important; box-shadow: 0 10px 25px rgba(0,0,0,0.08) !important; }
+}
+
+/* Rating badge pulse */
+.pulse-badge { animation: subtlePulse 2.8s ease-in-out 1s infinite; }
+
+/* Form focus glow */
+input, select, textarea { transition: border-color .2s ease, box-shadow .2s ease; }
+input:focus, select:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(194,155,127,.18) !important; outline: none; }
+
+/* Carousel arrows */
+#carousel-prev, #carousel-next { transition: opacity .2s ease, transform .15s ease !important; }
+#carousel-prev:hover { transform: translateY(-50%) scale(1.12) !important; }
+#carousel-next:hover { transform: translateY(-50%) scale(1.12) !important; }
+
+/* Lightbox fade */
+#lb-overlay { transition: opacity .25s ease; }
+#lb-overlay.active { display: flex !important; animation: fadeIn .25s ease both; }
+#lb-img { transition: opacity .25s ease, transform .25s cubic-bezier(0.4, 0, 0.2, 1); }
+#lb-img.sliding-left { opacity: 0; transform: translateX(-20px); }
+#lb-img.sliding-right { opacity: 0; transform: translateX(20px); }
+
+/* Booking Confirmation Animation */
+@keyframes checkmarkPop {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+#booking-confirmation.active-feedback span {
+  animation: checkmarkPop .4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  
+<!-- ==========================================
+     AGY ANIMATIONS (Pure CSS + Vanilla JS)
+     ========================================== -->
+<style id="agy-animations">
+  /* Scroll Reveal Base */
+  .reveal-base {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+  }
+  .reveal-visible { opacity: 1; transform: translateY(0); }
+
+  /* Buttons Hover/Tap */
+  .btn-animate {
+    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease !important;
+    will-change: transform;
+  }
+  .btn-animate:hover { transform: scale(1.03); filter: brightness(1.05); }
+  .btn-animate:active { transform: scale(0.96); filter: brightness(0.95); }
+
+  /* Card Lift */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease !important;
+    will-change: transform;
+  }
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px -8px rgba(0,0,0,0.15) !important;
+  }
+
+  /* Nav Links Underline */
+  .nav-link-anim { position: relative; }
+  .nav-link-anim::after {
+    content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0;
+    background-color: currentColor; transition: width 0.3s ease;
+  }
+  .nav-link-anim:hover::after { width: 100%; }
+
+  /* Rating Pulse */
+  @keyframes pulseBadge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+  .pulse-badge { animation: pulseBadge 3s infinite ease-in-out; display: inline-flex; }
+
+  /* Lightbox Transitions */
+  #lb-overlay {
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  #lb-overlay.active {
+    opacity: 1; visibility: visible;
+  }
+  .lb-img-anim {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease;
+  }
+  .lb-slide-left { opacity: 0; transform: translateX(30px) scale(0.98); }
+  .lb-slide-right { opacity: 0; transform: translateX(-30px) scale(0.98); }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-base, .btn-animate, .hover-lift, .pulse-badge, .nav-link-anim::after, #lb-overlay, .lb-img-anim {
+      transition: none !important; animation: none !important; transform: none !important; opacity: 1 !important; visibility: visible !important;
+    }
+  }
+</style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-secondary-container selection:text-text-primary">
+<!-- Outer Mobile Container wrapper (Target width ~390px centered on large viewports) -->
+<div class="mx-auto min-h-screen max-w-[420px] bg-editorial-texture flex flex-col relative shadow-2xl border-x border-border-subtle pb-28">
+<!-- Top Sticky Branding App Bar (Mobile companion) -->
+<header class="sticky top-0 z-40 backdrop-blur-md bg-surface-bright/90 border-b border-border-subtle px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-lg">spa</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-text-primary text-base font-semibold leading-tight">The Looks Family Salon</h2>
+<p class="font-label-sm text-accent-rose-muted text-[10px] tracking-wider uppercase">Bareilly</p>
+</div>
+</div>
+<a class="btn-animate inline-flex items-center justify-center px-3.5 py-1.5 rounded-full bg-primary text-on-primary text-xs font-semibold tracking-wide hover:bg-surface-dark transition-colors duration-200" href="#booking">
+        Book Now
+      </a>
+</header>
+<main class="flex-1 flex flex-col">
+<!-- HERO SECTION -->
+<section class="px-4 pt-6 pb-8 flex flex-col" id="hero">
+<!-- Trust badge -->
+<div class="pulse-badge inline-flex items-center self-center px-3 py-1 rounded-full bg-surface-container border border-border-subtle shadow-xs mb-4">
+<span class="text-accent-champagne text-xs mr-1">★</span>
+<span class="font-label-sm text-text-secondary text-[11px] font-semibold tracking-[0.04em] uppercase">
+            4.3 / 5 RATED SALON • EST. 2009 • BAREILLY, UP
+          </span>
+</div>
+<!-- Headline -->
+<h1 class="font-headline-lg-mobile text-text-primary text-center font-bold tracking-tight text-[2rem] leading-[1.2] mb-3 reveal-base hero-reveal">
+          Celebrating beauty &amp; timeless elegance in Bareilly.
+        </h1>
+<!-- Subheadline -->
+<p class="font-body-md text-text-secondary text-center text-sm leading-relaxed mb-5 max-w-[340px] mx-auto reveal-base hero-reveal">
+          A revered sanctuary for multi-generational styling, clinical skin therapies, and bespoke bridal artistry since 2009.
+        </p>
+<!-- Service Chips -->
+<div class="flex flex-wrap items-center justify-center gap-1.5 mb-6 reveal-base hero-reveal">
+<span class="px-3 py-1 rounded-full bg-surface-container text-text-primary text-xs font-medium border border-border-subtle">Hair Care</span>
+<span class="px-3 py-1 rounded-full bg-secondary-container/40 text-text-primary text-xs font-medium border border-border-accent">Bridal Makeup</span>
+<span class="px-3 py-1 rounded-full bg-surface-container text-text-primary text-xs font-medium border border-border-subtle">Skin Therapy</span>
+<span class="px-3 py-1 rounded-full bg-surface-container text-text-primary text-xs font-medium border border-border-subtle">Family Styling</span>
+</div>
+<!-- Mobile CTAs (min 44px hit area) -->
+<div class="flex flex-col gap-2.5 mb-6 reveal-base hero-reveal">
+<a class="btn-animate w-full min-h-[48px] flex items-center justify-center rounded-xl bg-primary text-on-primary font-title-md text-sm font-semibold tracking-wide shadow-md active:scale-[0.99] transition-transform" href="#booking">
+            Book an Appointment
+          </a>
+<a class="w-full min-h-[44px] flex items-center justify-center rounded-xl bg-surface-card border border-border-medium text-text-primary font-title-md text-sm font-medium hover:bg-surface-raised transition-colors" href="#services">
+            Explore Services
+          </a>
+</div>
+<!-- Hero Image Card with Badges -->
+<div class="relative w-full rounded-2xl overflow-hidden shadow-lg border border-border-accent bg-surface-dark aspect-[4/5] flex flex-col justify-end p-4">
+<img class="absolute inset-0 w-full h-full object-cover object-center" data-alt="Editorial close-up portrait of an Indian bride with flawless luminous bridal makeup, wearing traditional champagne and rose embroidered bridal lehenga and intricate gold jewelry. Soft diffused cinematic warm lighting, elegant luxury family salon setting in Bareilly, warm earth tones, deep espresso shadows and subtle radiant highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEZQJr-wcE3pUdHtnRtccSao6c8-gzxPPyAiC6KUkYmAwSYKO115eqqhVh7FrJhWfm0qGNteZq3EysRScfjhHM93JYA4TS1LDGQ0L2mCBMyEIlbHCkhEpRbsTQuTsZIx_iUjn7NfYFwBHmfnTvxF4DM0Nxx_RWx8ehFkBdJ_B61yoqagT3c_KqFxpS2AAp2dQFLUiyKxjb6fo92pqUP9chns4Wa3pzow13536LlMhT4ftXPjvjduLq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-scrim-overlay/40 to-transparent"></div>
+<!-- Floating Badges inside Hero Card -->
+<div class="relative z-10 space-y-2">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-dark/80 backdrop-blur-md border border-accent-champagne/40 text-text-inverse text-xs font-medium">
+<span class="material-symbols-outlined text-accent-champagne text-sm" data-icon="sparkle">drive_file_rename_outline</span>
+<span>Bridal Artistry &amp; Makeovers • Haute Couture</span>
+</div>
+<div class="flex items-center justify-between bg-surface-bright/95 backdrop-blur-md rounded-xl p-3 border border-border-subtle text-text-primary">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-base">verified</span>
+</div>
+<div>
+<p class="font-label-lg text-xs font-bold leading-tight">15+ Years Experience</p>
+<p class="font-body-sm text-[11px] text-text-tertiary">Graceful Transformation in Bareilly</p>
+</div>
+</div>
+<span class="text-accent-rose-muted font-bold text-xs">Est. 2009</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BRIDAL SPOTLIGHT SECTION (#bridal) -->
+<section class="px-4 py-8 bg-surface-raised border-y border-border-subtle" id="bridal">
+<div class="mb-5 text-center">
+<span class="font-label-sm text-accent-rose-muted text-[11px] uppercase tracking-[0.08em] font-semibold block mb-1">
+            BRIDAL ATELIER SPOTLIGHT
+          </span>
+<h2 class="font-headline-md text-text-primary text-xl font-bold tracking-tight mb-2">
+            Precision Artistry for Your Most Sacred Milestone
+          </h2>
+<p class="font-body-sm text-text-secondary text-xs leading-relaxed max-w-[340px] mx-auto">
+            High-definition cosmetic techniques, tailored bespoke dupatta drapery, and traditional Bareilly adornments celebrating your bespoke radiance.
+          </p>
+</div>
+<!-- Stacked Bridal Feature Cards -->
+<div class="grid grid-cols-1 gap-3 mb-6">
+<!-- Card 1 -->
+<div class="bg-surface-card rounded-xl p-3.5 border border-border-accent shadow-xs flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-secondary-container/50 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg" data-icon="flare">flare</span>
+</div>
+<div>
+<h3 class="font-title-md text-text-primary text-sm font-semibold mb-0.5">Radiant Glowing Finish</h3>
+<p class="font-body-sm text-text-secondary text-xs leading-normal">
+                Sweat-resistant, long-wear HD makeup formulated to look ethereal under warm wedding mandap photography.
+              </p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-card rounded-xl p-3.5 border border-border-accent shadow-xs flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest text-text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg" data-icon="brush">brush</span>
+</div>
+<div>
+<h3 class="font-title-md text-text-primary text-sm font-semibold mb-0.5">Personalized Consultations</h3>
+<p class="font-body-sm text-text-secondary text-xs leading-normal">
+                In-depth skin tone mapping, bridal jewelry matching, and personalized trial pre-wedding styling sessions.
+              </p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-card rounded-xl p-3.5 border border-border-accent shadow-xs flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest text-text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg" data-icon="diamond">diamond</span>
+</div>
+<div>
+<h3 class="font-title-md text-text-primary text-sm font-semibold mb-0.5">Luxury Bridal Packages</h3>
+<p class="font-body-sm text-text-secondary text-xs leading-normal">
+                Pre-bridal gold radiance facials, whole-body therapies, conditioning hair spas, and delicate lash enhancements.
+              </p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-card rounded-xl p-3.5 border border-border-accent shadow-xs flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-secondary-container/50 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg" data-icon="groups_2">groups_2</span>
+</div>
+<div>
+<h3 class="font-title-md text-text-primary text-sm font-semibold mb-0.5">Bridal Troupe Suites</h3>
+<p class="font-body-sm text-text-secondary text-xs leading-normal">
+                Simultaneous coordinated styling for mother, sisters, and bridesmaids in a private, hospitable family lounge.
+              </p>
+</div>
+</div>
+</div>
+<a class="w-full min-h-[46px] flex items-center justify-center gap-2 rounded-xl bg-primary text-on-primary font-title-md text-xs uppercase tracking-wider font-semibold shadow hover:bg-surface-dark transition-all" href="#booking">
+<span class="material-symbols-outlined text-accent-champagne text-base">event_seat</span>
+          Reserve Bridal Consultation
+        </a>
+</section>
+<!-- ARTISANAL SERVICE OFFERINGS SECTION (#services) -->
+<section class="px-4 py-8" id="services" class="reveal-container">
+<div class="mb-5">
+<span class="font-label-sm text-accent-rose-muted text-[11px] uppercase tracking-[0.08em] font-semibold block mb-1">
+            COMPREHENSIVE MENU
+          </span>
+<h2 class="font-headline-md text-text-primary text-xl font-bold tracking-tight">
+            Our Artisanal Service Offerings
+          </h2>
+<p class="font-body-sm text-text-secondary text-xs mt-1">
+            Carefully organized across hair, bridal, clinical skincare, and wellness. No pricing or hidden tiers—crafted for complete family care.
+          </p>
+</div>
+<!-- 4 Structured Service Cards -->
+<div class="space-y-4">
+<!-- Category 1: Hair Artistry & Care -->
+<div class="bg-surface-bright rounded-2xl p-4 border border-border-subtle shadow-sm">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-base">content_cut</span>
+</div>
+<h3 class="font-title-lg text-text-primary text-base font-semibold">Hair Artistry &amp; Care</h3>
+</div>
+<span class="text-[11px] font-medium text-accent-rose-muted bg-surface-container px-2 py-0.5 rounded">5 Rituals</span>
+</div>
+<ul class="space-y-2 mb-4">
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-champagne"></span>Hair Cutting
+                </span>
+<span class="text-[11px] text-text-tertiary">Precision &amp; Layering</span>
+</li>
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-champagne"></span>Hair Styling
+                </span>
+<span class="text-[11px] text-text-tertiary">Blowouts &amp; Updos</span>
+</li>
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-champagne"></span>Hair Colouring
+                </span>
+<span class="text-[11px] text-text-tertiary">Organic &amp; Ammonia-Free</span>
+</li>
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-champagne"></span>Hair Conditioning
+                </span>
+<span class="text-[11px] text-text-tertiary">Deep Keratin Spa</span>
+</li>
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-champagne"></span>Hair Streaking
+                </span>
+<span class="text-[11px] text-text-tertiary">Balayage &amp; Highlights</span>
+</li>
+</ul>
+<a class="w-full py-2.5 rounded-xl bg-surface-container text-text-primary hover:bg-surface-container-high text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" href="#booking">
+<span>Book Hair Care</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Category 2: Bridal & Makeup -->
+<div class="bg-surface-bright rounded-2xl p-4 border border-border-accent shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2.5 py-0.5 rounded-bl-lg">
+              Signature
+            </div>
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-secondary-container/60 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">auto_fix_high</span>
+</div>
+<h3 class="font-title-lg text-text-primary text-base font-semibold">Bridal &amp; Makeup</h3>
+</div>
+<span class="text-[11px] font-medium text-accent-rose-muted bg-surface-container px-2 py-0.5 rounded">3 Services</span>
+</div>
+<ul class="space-y-2 mb-4">
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-rose-muted"></span>Basic Makeup
+                </span>
+<span class="text-[11px] text-text-tertiary">Party &amp; Festive Glitz</span>
+</li>
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-rose-muted"></span>Bridal Makeup
+                </span>
+<span class="text-[11px] text-text-tertiary">Haute HD Wedding Face</span>
+</li>
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-rose-muted"></span>Bridal Packages
+                </span>
+<span class="text-[11px] text-text-tertiary">Full Troupe Ceremonials</span>
+</li>
+</ul>
+<a class="w-full py-2.5 rounded-xl bg-primary text-on-primary text-xs font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-dark transition-colors" href="#booking">
+<span>Book Bridal &amp; Makeup</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Category 3: Skin & Facial -->
+<div class="bg-surface-bright rounded-2xl p-4 border border-border-subtle shadow-sm">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-base">face_retouching_natural</span>
+</div>
+<h3 class="font-title-lg text-text-primary text-base font-semibold">Skin &amp; Facial</h3>
+</div>
+<span class="text-[11px] font-medium text-accent-rose-muted bg-surface-container px-2 py-0.5 rounded">3 Services</span>
+</div>
+<ul class="space-y-2 mb-4">
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-champagne"></span>Facials
+                </span>
+<span class="text-[11px] text-text-tertiary">Gold, Diamond &amp; Herbal</span>
+</li>
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-champagne"></span>Deep Cleansing
+                </span>
+<span class="text-[11px] text-text-tertiary">Pore Detox &amp; Exfoliation</span>
+</li>
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-champagne"></span>Acne &amp; Skin Treatments
+                </span>
+<span class="text-[11px] text-text-tertiary">Clinical Derm Care</span>
+</li>
+</ul>
+<a class="w-full py-2.5 rounded-xl bg-surface-container text-text-primary hover:bg-surface-container-high text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" href="#booking">
+<span>Book Skin Therapy</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Category 4: Grooming & Wellness -->
+<div class="bg-surface-bright rounded-2xl p-4 border border-border-subtle shadow-sm">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-base">spa</span>
+</div>
+<h3 class="font-title-lg text-text-primary text-base font-semibold">Grooming &amp; Wellness</h3>
+</div>
+<span class="text-[11px] font-medium text-accent-rose-muted bg-surface-container px-2 py-0.5 rounded">4 Rituals</span>
+</div>
+<ul class="space-y-2 mb-4">
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-champagne"></span>Body Waxing
+                </span>
+<span class="text-[11px] text-text-tertiary">Rica &amp; Gentle Honey</span>
+</li>
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-champagne"></span>Manicure
+                </span>
+<span class="text-[11px] text-text-tertiary">Nail Health &amp; Gel Shine</span>
+</li>
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-champagne"></span>Pedicure
+                </span>
+<span class="text-[11px] text-text-tertiary">Relaxing Foot Soak &amp; Scrub</span>
+</li>
+<li class="flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-2 text-text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-champagne"></span>Ear Piercing
+                </span>
+<span class="text-[11px] text-text-tertiary">Hygienic Gun Piercing</span>
+</li>
+</ul>
+<a class="w-full py-2.5 rounded-xl bg-surface-container text-text-primary hover:bg-surface-container-high text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" href="#booking">
+<span>Book Grooming</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- CRAFTSMANSHIP IN FOCUS / VISUAL GALLERY SECTION (#gallery) -->
+<section class="px-4 py-8 bg-surface-raised border-y border-border-subtle" id="gallery" class="reveal-container">
+<div class="mb-5">
+<span class="font-label-sm text-accent-rose-muted text-[11px] uppercase tracking-[0.08em] font-semibold block mb-1">
+            VISUAL GALLERY
+          </span>
+<h2 class="font-headline-md text-text-primary text-xl font-bold tracking-tight">
+            Craftsmanship in Focus
+          </h2>
+<p class="font-body-sm text-text-secondary text-xs mt-1">
+            Moments of quiet refinement, intricate bridal finishes, and timeless aesthetics created right here in Bareilly.
+          </p>
+</div>
+<!-- Real photo gallery carousel — populated from GALLERY_IMAGES array in the JS below -->
+<div class="relative">
+  <div class="overflow-hidden rounded-xl" id="gallery-viewport">
+    <div class="flex transition-transform duration-500 ease-in-out" id="gallery-track"></div>
+  </div>
+  <button id="carousel-prev" aria-label="Previous" style="position:absolute;left:.25rem;top:50%;transform:translateY(-50%);z-index:10;width:2.25rem;height:2.25rem;border-radius:50%;background:rgba(251,249,246,0.92);border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;">
+    <span class="material-symbols-outlined text-text-primary" style="font-size:22px;">chevron_left</span>
+  </button>
+  <button id="carousel-next" aria-label="Next" style="position:absolute;right:.25rem;top:50%;transform:translateY(-50%);z-index:10;width:2.25rem;height:2.25rem;border-radius:50%;background:rgba(251,249,246,0.92);border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;">
+    <span class="material-symbols-outlined text-text-primary" style="font-size:22px;">chevron_right</span>
+  </button>
+</div>
+</section>
+<!-- RESERVE YOUR EXPERIENCE & SALON INFO (#contact / #booking) -->
+<section class="px-4 py-8" id="booking" class="reveal-container">
+<div class="mb-5">
+<span class="font-label-sm text-accent-rose-muted text-[11px] uppercase tracking-[0.08em] font-semibold block mb-1">
+            CONCIERGE DESK
+          </span>
+<h2 class="font-headline-md text-text-primary text-xl font-bold tracking-tight">
+            Reserve Your Experience
+          </h2>
+<p class="font-body-sm text-text-secondary text-xs mt-1">
+            Skip the waiting room. Submit your preferred time and our salon concierge will promptly confirm your slot.
+          </p>
+</div>
+<!-- Booking Form Container -->
+<div class="bg-surface-bright rounded-2xl p-4 border border-border-accent shadow-sm mb-6 reveal-base reveal-child">
+<form class="space-y-3.5" id="appointment-form-mobile">
+<div>
+<label class="block font-label-lg text-xs font-semibold text-text-primary mb-1">Full Name</label>
+<input class="w-full px-3 py-2 text-xs rounded-xl bg-surface-base border border-border-medium focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="m-name" placeholder="e.g. Priya Sharma" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-lg text-xs font-semibold text-text-primary mb-1">Phone Number (WhatsApp)</label>
+<input class="w-full px-3 py-2 text-xs rounded-xl bg-surface-base border border-border-medium focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="m-phone" placeholder="+91 98765 43210" required="" type="tel"/>
+</div>
+<div>
+<label class="block font-label-lg text-xs font-semibold text-text-primary mb-1">Desired Service</label>
+<select class="w-full px-3 py-2 text-xs rounded-xl bg-surface-base border border-border-medium focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-text-primary" id="m-service" required="">
+<option disabled="" selected="" value="">Choose from our 15 artisanal services</option>
+<optgroup label="Hair Artistry">
+<option value="Hair Cutting">Hair Cutting</option>
+<option value="Hair Styling">Hair Styling</option>
+<option value="Hair Colouring">Hair Colouring</option>
+<option value="Hair Conditioning">Hair Conditioning</option>
+<option value="Hair Streaking">Hair Streaking</option>
+</optgroup>
+<optgroup label="Bridal &amp; Makeup">
+<option value="Basic Makeup">Basic Makeup</option>
+<option value="Bridal Makeup">Bridal Makeup</option>
+<option value="Bridal Packages">Bridal Packages</option>
+</optgroup>
+<optgroup label="Skin &amp; Facial">
+<option value="Facials (Herbal/Gold)">Facials (Herbal/Gold)</option>
+<option value="Deep Cleansing Detox">Deep Cleansing Detox</option>
+<option value="Acne &amp; Skin Treatments">Acne &amp; Skin Treatments</option>
+</optgroup>
+<optgroup label="Grooming &amp; Wellness">
+<option value="Body Waxing">Body Waxing</option>
+<option value="Manicure Ritual">Manicure Ritual</option>
+<option value="Pedicure Ritual">Pedicure Ritual</option>
+<option value="Hygienic Ear Piercing">Hygienic Ear Piercing</option>
+</optgroup>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block font-label-lg text-xs font-semibold text-text-primary mb-1">Preferred Date</label>
+<input class="w-full px-2.5 py-2 text-xs rounded-xl bg-surface-base border border-border-medium focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="m-date" required="" type="date"/>
+</div>
+<div>
+<label class="block font-label-lg text-xs font-semibold text-text-primary mb-1">Time Slot</label>
+<select class="w-full px-2.5 py-2 text-xs rounded-xl bg-surface-base border border-border-medium focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="m-time" required="">
+<option value="11:30 AM">11:30 AM (Opening)</option>
+<option value="01:00 PM">01:00 PM</option>
+<option value="03:00 PM">03:00 PM</option>
+<option value="05:00 PM">05:00 PM</option>
+<option value="06:30 PM">06:30 PM</option>
+<option value="07:30 PM">07:30 PM</option>
+</select>
+</div>
+</div>
+<button class="btn-animate w-full min-h-[48px] rounded-xl bg-primary text-on-primary font-title-md text-xs font-semibold tracking-wide uppercase shadow hover:bg-surface-dark transition-all mt-2" type="submit">
+              Confirm Appointment Request
+            </button>
+</form>
+<div class="hidden p-3 mt-3 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center gap-2" id="booking-confirmation">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<p class="font-body-sm text-xs font-semibold">Redirecting to WhatsApp to confirm.</p>
+</div>
+</div>
+<!-- Salon Information & Map Card (#contact) -->
+<div class="bg-surface-raised rounded-2xl p-4 border border-border-subtle space-y-4" id="contact" class="reveal-container">
+<div class="flex items-center justify-between border-b border-border-subtle pb-3">
+<div>
+<h3 class="font-title-lg text-text-primary text-sm font-bold">The Looks Family Salon</h3>
+<p class="font-body-sm text-[11px] text-text-secondary">Established 2009 in Bareilly</p>
+</div>
+<div class="px-2 py-1 bg-surface-bright border border-border-subtle rounded text-right">
+<span class="text-xs font-bold text-text-primary">★ 4.3 / 5</span>
+<p class="text-[9px] text-text-tertiary">Verified Reviews</p>
+</div>
+</div>
+<!-- Location Info -->
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-accent-rose-muted text-lg shrink-0 mt-0.5" data-icon="pin_drop">pin_drop</span>
+<div>
+<p class="text-xs font-semibold text-text-primary">Our Salon Address</p>
+<p class="text-xs text-text-secondary leading-relaxed">
+                Near Kakraiya Kabristan, Shekhan Nawada, Satipur Road, Bareilly - 243005, Uttar Pradesh.
+              </p>
+</div>
+</div>
+<!-- Hours Info -->
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-accent-champagne text-lg shrink-0 mt-0.5" data-icon="schedule">schedule</span>
+<div>
+<p class="text-xs font-semibold text-text-primary">Opening Hours</p>
+<p class="text-xs text-text-secondary">
+                Monday – Sunday: <span class="font-medium text-text-primary">11:30 AM – 8:00 PM</span><br/>
+<span class="text-[11px] text-accent-rose-muted font-medium">Open 7 Days a Week for Families</span>
+</p>
+</div>
+</div>
+<!-- Quick Action Buttons: Call & WhatsApp -->
+<div class="grid grid-cols-2 gap-2.5 pt-1">
+<a class="min-h-[44px] flex items-center justify-center gap-1.5 rounded-xl bg-surface-bright border border-border-medium text-text-primary font-label-lg text-xs font-semibold hover:bg-surface-container transition-colors" href="tel:+917947133718">
+<span class="material-symbols-outlined text-sm">call</span>
+<span>Call Salon</span>
+</a>
+<a class="min-h-[44px] flex items-center justify-center gap-1.5 rounded-xl bg-[#25D366]/15 border border-[#25D366]/30 text-[#128C7E] font-label-lg text-xs font-semibold hover:bg-[#25D366]/25 transition-colors" href="https://wa.me/917947133718" target="_blank">
+<span class="material-symbols-outlined text-sm">chat</span>
+<span>WhatsApp</span>
+</a>
+</div>
+<!-- Map card visual representing Satipur Road, Bareilly -->
+<div class="relative rounded-xl overflow-hidden border border-border-subtle aspect-[16/9] shadow-xs">
+<div class="w-full h-full bg-cover bg-center" data-alt="Editorial stylized map view showing Satipur Road and Shekhan Nawada neighbourhood in Bareilly Uttar Pradesh with soft muted champagne tones, warm road outlines and a prominent location marker for The Looks Family Salon." data-location="Bareilly, Uttar Pradesh" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkYYJ5UEw5LlTzPXP3eBLZ5t8_mym0DfB31u-Yu2ELFXuUbmgSBoC9BIVcdw250Zo4gIcGa_7MnzQILk_Jm8xuFeTwpyzljQN7vk2i0GFDNhGdqs0RL4KznYK3gBD56gGAV7CXZoCF1H8hrr03IkAxHO4u4R0kJowPNr2l8Y72wDCaM0JokZGbNJLiIvku9AqRSPbJCtxttEwYCNL35-ivXuQ_7j8zbyHR9wUcG5FgCFxbydE_92Fw')"></div>
+<div class="absolute inset-0 bg-surface-dark/20 backdrop-blur-[0.5px] flex items-center justify-center p-3">
+<a class="px-3 py-1.5 rounded-lg bg-surface-bright/95 text-text-primary font-semibold text-xs shadow-md flex items-center gap-1 hover:bg-surface-bright" href="https://maps.google.com/?q=Shekhan+Nawada+Satipur+Road+Bareilly" target="_blank">
+<span class="material-symbols-outlined text-sm text-accent-rose-muted">navigation</span>
+<span>Get Directions</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- MOBILE FOOTER -->
+<footer class="mt-auto px-4 py-6 border-t border-border-subtle bg-surface-bright text-center space-y-2">
+<div class="flex items-center justify-center gap-1.5 text-text-primary font-headline-sm text-sm font-semibold">
+<span>The Looks Family Salon</span>
+</div>
+<p class="text-[11px] text-text-secondary leading-relaxed max-w-[280px] mx-auto">
+          Satipur Road, Shekhan Nawada, Bareilly - 243005<br/>
+          Open 7 Days: 11:30 AM – 8:00 PM
+        </p>
+<div class="flex flex-col gap-2 pt-2 border-t border-border-subtle">
+<p class="text-[10px] text-text-tertiary">
+  © 2026 The Looks Family Salon. All rights reserved.
+</p>
+<div class="flex items-center justify-center gap-3">
+  <a href="#home" class="text-[10px] text-text-tertiary hover:text-text-primary transition-colors">Privacy Policy</a>
+  <a href="#home" class="text-[10px] text-text-tertiary hover:text-text-primary transition-colors">Terms of Service</a>
+</div>
+<p class="text-[10px] text-text-tertiary">Built by <a href="https://5lashh.vercel.app" target="_blank" rel="noopener noreferrer" class="text-blue-500 font-bold animate-pulse hover:text-blue-600 transition-colors">Flash Dev</a></p>
+</div>
+</footer>
+</main>
+<!-- FIXED SHARED BOTTOM NAVIGATION BAR (Anchored) -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[420px] z-50 shadow-2xl">
+<div class="flex gap-2 border-t border-[#eeecec] bg-neutral-50 px-4 pb-3 pt-2">
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#161413]" href="#hero">
+<div class="text-[#161413] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="fill">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"></path>
+</svg>
+</div>
+<p class="text-[#161413] text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#7b6e6b]" href="#bridal">
+<div class="text-[#7b6e6b] flex h-8 items-center justify-center" data-icon="Sparkle" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M197.58,129.06l-51.61-19-19-51.65a15.92,15.92,0,0,0-29.88,0L78.07,110l-51.65,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0l19-51.61,51.65-19a15.92,15.92,0,0,0,0-29.88ZM140.39,163a15.87,15.87,0,0,0-9.43,9.43l-19,51.46L93,172.39A15.87,15.87,0,0,0,83.61,163h0L32.15,144l51.46-19A15.87,15.87,0,0,0,93,115.61l19-51.46,19,51.46a15.87,15.87,0,0,0,9.43,9.43l51.46,19ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"></path>
+</svg>
+</div>
+<p class="text-[#7b6e6b] text-xs font-medium leading-normal tracking-[0.015em]">Bridal</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#7b6e6b]" href="#services">
+<div class="text-[#7b6e6b] flex h-8 items-center justify-center" data-icon="Scissors" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M157.73,113.13A8,8,0,0,1,159.82,102L227.48,55.7a8,8,0,0,1,9,13.21l-67.67,46.3a7.92,7.92,0,0,1-4.51,1.4A8,8,0,0,1,157.73,113.13Zm80.87,85.09a8,8,0,0,1-11.12,2.08L136,137.7,93.49,166.78a36,36,0,1,1-9-13.19L121.83,128,84.44,102.41a35.86,35.86,0,1,1,9-13.19l143,97.87A8,8,0,0,1,238.6,198.22ZM80,180a20,20,0,1,0-5.86,14.14A19.85,19.85,0,0,0,80,180ZM74.14,90.13a20,20,0,1,0-28.28,0A19.85,19.85,0,0,0,74.14,90.13Z"></path>
+</svg>
+</div>
+<p class="text-[#7b6e6b] text-xs font-medium leading-normal tracking-[0.015em]">Services</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#7b6e6b]" href="#contact">
+<div class="text-[#7b6e6b] flex h-8 items-center justify-center" data-icon="MapPin" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"></path>
+</svg>
+</div>
+<p class="text-[#7b6e6b] text-xs font-medium leading-normal tracking-[0.015em]">Contact</p>
+</a>
+</div>
+</div>
+</div>
+
+<!-- ============================================================
+     LIGHTBOX OVERLAY (mobile)
+     ============================================================ -->
+<div id="lb-overlay" class="" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(28,22,21,0.92);align-items:center;justify-content:center;flex-direction:column;">
+  <button id="lb-close" aria-label="Close" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:#FAF8F5;font-size:1.75rem;cursor:pointer;line-height:1;">✕</button>
+  <button id="lb-prev" aria-label="Previous" style="position:absolute;left:.5rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:#FAF8F5;font-size:1.75rem;padding:.4rem .8rem;cursor:pointer;border-radius:.4rem;">‹</button>
+  <button id="lb-next" aria-label="Next" style="position:absolute;right:.5rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:#FAF8F5;font-size:1.75rem;padding:.4rem .8rem;cursor:pointer;border-radius:.4rem;">›</button>
+  <img id="lb-img" src="" alt="" class="lb-img-anim" style="max-width:94vw;max-height:82vh;object-fit:contain;border-radius:.5rem;"/>
+  <p id="lb-caption" style="color:#C29B7F;margin-top:.6rem;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;"></p>
+</div>
+
+<script>
+// ============================================================
+// WHATSAPP CONFIG — replace 91XXXXXXXXXX with the real number
+// ============================================================
+var WHATSAPP_NUMBER = '917947133718';
+
+// ============================================================
+// GALLERY IMAGES
+// All files are in Gallary/bridal/ relative to this HTML file.
+// To add/remove photos: edit this array only.
+// ============================================================
+var GALLERY_IMAGES = [
+  { file: '3dw5t42yy8y40ef-5ffhgfqrdd.avif',   ext: 'avif', label: 'Bridal Artistry' },
+  { file: '3z6h7xwzhlkq10b-ad2cjkxuxb.avif',   ext: 'avif', label: 'Bridal Makeup' },
+  { file: 'pyvodq3bowxnou6-0x7s6bvg1q.avif',   ext: 'avif', label: 'Bridal Look' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-67q12d2z9j.avif', ext: 'avif', label: 'Bridal Session' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-7f82jwlcvt.avif', ext: 'avif', label: 'Bridal Preparation' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-7r5aay2e7o.avif', ext: 'avif', label: 'Bridal Finish' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-976o22ug26.avif', ext: 'avif', label: 'Bridal Glam' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-bjd7zpz151.avif', ext: 'avif', label: 'Bridal Couture' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-dgcwity1yj.avif', ext: 'avif', label: 'Bridal Elegance' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-ewx70it6l6.avif', ext: 'avif', label: 'Bridal Glow' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-ndrdtrojvu.avif', ext: 'avif', label: 'Bridal Portrait' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-ptf7dxc23e.avif', ext: 'avif', label: 'Bridal Detail' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-r21cmppj4k.avif', ext: 'avif', label: 'Bridal Style' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-vlmulgvlr8.avif', ext: 'avif', label: 'Bridal Radiance' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-vrgzawn657.avif', ext: 'avif', label: 'Bridal Grace' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-yjan5e8y2e.avif', ext: 'avif', label: 'Bridal Beauty' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-4e6wogrrzw.webp', ext: 'webp', label: 'Salon Work' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-5xuousv2f7.webp', ext: 'webp', label: 'Salon Artistry' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-e601mo18qx.jpg',  ext: 'jpg',  label: 'Salon Craft' },
+];
+
+var BASE_PATH = 'Gallary/bridal/';
+
+// ---- AVIF support check ----
+var avifSupported = null;
+function checkAvif(callback) {
+  if (avifSupported !== null) { callback(avifSupported); return; }
+  var img = new Image();
+  img.onload  = function() { avifSupported = true;  callback(true); };
+  img.onerror = function() { avifSupported = false; callback(false); };
+  img.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAABcAAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAEAAAABAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQAMAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAAB9tZGF0EgAKCBgABogQEDQgAGgkiEC//8PwAA==';
+}
+
+// ---- Build mobile gallery carousel (1 per view) ----
+function buildGallery(avifOk) {
+  var track = document.getElementById('gallery-track');
+  var current = 0;
+  var total = GALLERY_IMAGES.length;
+
+  GALLERY_IMAGES.forEach(function(img, idx) {
+    var isAvif = img.ext === 'avif';
+    var src = BASE_PATH + img.file;
+    var slide = document.createElement('div');
+    slide.className = 'flex-shrink-0 reveal-base reveal-child';
+    slide.style.width = '100%';
+
+    if (isAvif && !avifOk) {
+      slide.innerHTML = '<div class="aspect-[4/5] rounded-xl bg-surface-raised flex items-center justify-center text-text-tertiary text-[10px] p-2 text-center">' + img.label + '</div>';
+    } else {
+      var inner = document.createElement('div');
+      inner.className = 'relative rounded-xl overflow-hidden shadow-sm border border-border-subtle cursor-pointer aspect-[4/5] hover-lift';
+      inner.innerHTML =
+        '<picture>' +
+        (isAvif ? '<source srcset="' + src + '" type="image/avif">' : '') +
+        '<img src="' + src + '" alt="' + img.label + '" loading="lazy" class="w-full h-full object-cover object-[center_15%]"/>' +
+        '</picture>' +
+        '<div class="absolute inset-0 bg-gradient-to-t from-surface-dark/80 via-transparent to-transparent flex items-end p-3">' +
+        '<p class="text-[10px] text-accent-champagne uppercase font-semibold tracking-wider">' + img.label + '</p>' +
+        '</div>';
+      inner.addEventListener('click', function() { openLightbox(idx, avifOk); });
+      slide.appendChild(inner);
+    }
+    track.appendChild(slide);
+  });
+
+  function go(n) {
+    current = Math.max(0, Math.min(n, total - 1));
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    document.getElementById('carousel-prev').style.opacity = current === 0 ? '0.35' : '1';
+    document.getElementById('carousel-next').style.opacity = current >= total - 1 ? '0.35' : '1';
+  }
+
+  document.getElementById('carousel-prev').addEventListener('click', function() { go(current - 1); });
+  document.getElementById('carousel-next').addEventListener('click', function() { go(current + 1); });
+
+  // Swipe support for mobile
+  var touchStartX = 0;
+  track.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) go(dx < 0 ? current + 1 : current - 1);
+  }, { passive: true });
+
+  go(0);
+}
+
+// ---- Lightbox ----
+var lbIndex = 0;
+var lbAvifOk = true;
+var lbOverlay = document.getElementById('lb-overlay');
+var lbImg     = document.getElementById('lb-img');
+var lbCaption = document.getElementById('lb-caption');
+
+function openLightbox(idx, avifOk) {
+  lbAvifOk = avifOk;
+  lbIndex  = idx;
+  showLbImage('none');
+  lbOverlay.style.display = 'flex';
+  setTimeout(function() { lbOverlay.classList.add('active'); }, 10);
+  document.body.style.overflow = 'hidden';
+}
+
+function showLbImage(direction) {
+  var img   = GALLERY_IMAGES[lbIndex];
+  var isAvif = img.ext === 'avif';
+  
+  if (direction === 'left') lbImg.classList.add('sliding-right');
+  else if (direction === 'right') lbImg.classList.add('sliding-left');
+
+  setTimeout(function() {
+    if (isAvif && !lbAvifOk) {
+      lbImg.src = '';
+      lbCaption.textContent = img.label + ' (preview unavailable)';
+    } else {
+      lbImg.src = BASE_PATH + img.file;
+      lbCaption.textContent = img.label;
+    }
+    lbImg.onload = function() { lbImg.classList.remove('sliding-left', 'sliding-right'); };
+    if (lbImg.complete) lbImg.classList.remove('sliding-left', 'sliding-right');
+  }, direction === 'none' ? 0 : 200);
+}
+
+function closeLightbox() {
+  lbOverlay.classList.remove('active');
+  setTimeout(function() { lbOverlay.style.display = 'none'; }, 250);
+  document.body.style.overflow = '';
+}
+
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.getElementById('lb-prev').addEventListener('click', function(e) {
+  e.stopPropagation();
+  lbIndex = (lbIndex - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
+  showLbImage('right');
+});
+document.getElementById('lb-next').addEventListener('click', function(e) {
+  e.stopPropagation();
+  lbIndex = (lbIndex + 1) % GALLERY_IMAGES.length;
+  showLbImage('left');
+});
+document.addEventListener('keydown', function(e) {
+  if (lbOverlay.style.display === 'none') return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft')  { lbIndex = (lbIndex - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length; showLbImage('right'); }
+  if (e.key === 'ArrowRight') { lbIndex = (lbIndex + 1) % GALLERY_IMAGES.length; showLbImage('left'); }
+});
+lbOverlay.addEventListener('click', function(e) { if (e.target === lbOverlay) closeLightbox(); });
+
+function initDateTimeValidation(dateId, timeId) {
+  var dateInput = document.getElementById(dateId);
+  var timeSelect = document.getElementById(timeId);
+  if (!dateInput || !timeSelect) return;
+
+  var today = new Date();
+  var tzOffset = today.getTimezoneOffset() * 60000;
+  var localISOTime = (new Date(Date.now() - tzOffset)).toISOString().slice(0, 10);
+  dateInput.setAttribute('min', localISOTime);
+
+  function updateTimeOptions() {
+    var selectedDate = dateInput.value;
+    var now = new Date();
+    var isToday = selectedDate === localISOTime;
+    
+    var options = Array.from(timeSelect.options);
+    var firstAvailable = null;
+    
+    options.forEach(function(opt) {
+      if (!opt.value) return; // skip placeholder
+      
+      if (!isToday) {
+        opt.disabled = false;
+        opt.style.display = '';
+        if (!firstAvailable) firstAvailable = opt.value;
+        return;
+      }
+      
+      var val = opt.value.split('-')[0].trim();
+      var parts = val.split(' ');
+      var timeParts = parts[0].split(':');
+      var hours = parseInt(timeParts[0], 10);
+      var mins = parseInt(timeParts[1], 10);
+      var ampm = parts[1] ? parts[1].toUpperCase() : '';
+      
+      if (ampm === 'PM' && hours !== 12) hours += 12;
+      if (ampm === 'AM' && hours === 12) hours = 0;
+      
+      var optTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, mins, 0);
+      
+      if (optTime <= now) {
+        opt.disabled = true;
+        opt.style.display = 'none';
+      } else {
+        opt.disabled = false;
+        opt.style.display = '';
+        if (!firstAvailable) firstAvailable = opt.value;
+      }
+    });
+
+    var selectedOpt = timeSelect.options[timeSelect.selectedIndex];
+    if (selectedOpt && selectedOpt.disabled) {
+      timeSelect.value = firstAvailable || '';
+    }
+  }
+
+  dateInput.addEventListener('change', updateTimeOptions);
+  updateTimeOptions(); // Initial check
+}
+
+initDateTimeValidation('m-date', 'm-time');
+
+checkAvif(function(ok) { buildGallery(ok); });
+
+// ============================================================
+// TASK 1 — WhatsApp form wiring (mobile)
+// ============================================================
+document.getElementById('appointment-form-mobile').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var name    = document.getElementById('m-name').value.trim();
+  var phone   = document.getElementById('m-phone').value.trim();
+  var service = document.getElementById('m-service').value;
+  var date    = document.getElementById('m-date').value;
+  var time    = document.getElementById('m-time').value;
+
+  if (!name || !phone || !service || !date || !time) return;
+
+  var msg = 'Hello, I\u2019d like to book an appointment at The Looks Family Salon.\n\n' +
+            'Name: ' + name + '\n' +
+            'Phone: ' + phone + '\n' +
+            'Service: ' + service + '\n' +
+            'Preferred Date: ' + date + '\n' +
+            'Preferred Time: ' + time;
+
+  var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+
+  var submitBtn = document.querySelector('#appointment-form-mobile button[type="submit"]');
+  var origText = submitBtn.innerHTML;
+  submitBtn.innerHTML = '<span class="material-symbols-outlined align-middle text-[18px]">check_circle</span>';
+  submitBtn.style.backgroundColor = '#16a34a';
+  submitBtn.style.color = '#fff';
+  
+  var confDiv = document.getElementById('booking-confirmation');
+  confDiv.classList.remove('hidden');
+  void confDiv.offsetWidth;
+  confDiv.classList.add('active-feedback');
+  
+  // On mobile this opens the WhatsApp app directly
+  setTimeout(function() {
+    window.location.href = url;
+    setTimeout(function() { 
+      submitBtn.innerHTML = origText; 
+      submitBtn.style.backgroundColor = ''; 
+      submitBtn.style.color = ''; 
+      confDiv.classList.add('hidden');
+      confDiv.classList.remove('active-feedback');
+      e.target.reset();
+    }, 2000);
+  }, 600);
+});
+
+// ============================================================
+// SCROLL REVEAL & STAGGER ANIMATIONS
+// ============================================================
+document.addEventListener("DOMContentLoaded", function() {
+  var isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (isReduced) {
+    document.querySelectorAll('.reveal-base').forEach(function(el) { el.classList.add('reveal-visible'); });
+    return;
+  }
+
+  // Header shadow on scroll
+  var hdr = document.querySelector('header');
+  if (hdr) window.addEventListener('scroll', function() {
+    hdr.classList.toggle('is-scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  var observer = new IntersectionObserver(function(entries, obs) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        if (el.classList.contains('reveal-container')) {
+          var children = el.querySelectorAll('.reveal-child');
+          children.forEach(function(child, index) {
+            setTimeout(function() { child.classList.add('reveal-visible'); }, index * 80);
+          });
+        } else {
+          el.classList.add('reveal-visible');
+        }
+        obs.unobserve(el);
+      }
+    });
+  }, { rootMargin: '0px 0px -40px 0px', threshold: 0.05 });
+
+  // Trigger hero elements instantly with stagger
+  var heroEls = document.querySelectorAll('.hero-reveal');
+  heroEls.forEach(function(el, index) {
+    setTimeout(function() { el.classList.add('reveal-visible'); }, 100 + (index * 100));
+  });
+
+  // Auto-tag ALL section direct children (non-hero) for scroll reveal
+  document.querySelectorAll('section:not(#hero) > *').forEach(function(el) {
+    if (!el.classList.contains('reveal-base') && !el.classList.contains('hero-reveal')) {
+      el.classList.add('reveal-base');
+    }
+  });
+
+  // Also stagger-reveal direct children of service/bridal grids
+  document.querySelectorAll('#services .grid > *, #bridal .grid > *').forEach(function(el, i) {
+    el.classList.add('reveal-base', 'reveal-child');
+    observer.observe(el);
+  });
+
+  // Observe all elements now tagged with reveal-base (including auto-tagged ones)
+  document.querySelectorAll('.reveal-container, .reveal-base:not(.hero-reveal, .reveal-child)').forEach(function(el) {
+    observer.observe(el);
+  });
+});
+</script>
+</body></html>
