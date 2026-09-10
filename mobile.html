@@ -740,7 +740,7 @@ input:focus, select:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(194,155,1
 </div>
 </div>
 <!-- Salon Information & Map Card (#contact) -->
-<div class="bg-surface-raised rounded-2xl p-4 border border-border-subtle space-y-4 reveal-container" id="contact">
+<div class="bg-surface-raised rounded-2xl p-4 border border-border-subtle space-y-4 reveal-base reveal-child" id="contact">
 <div class="flex items-center justify-between border-b border-border-subtle pb-3">
 <div>
 <h3 class="font-title-lg text-text-primary text-sm font-bold">The Looks Family Salon</h3>
@@ -921,7 +921,7 @@ function buildGallery(avifOk) {
     var isAvif = img.ext === 'avif';
     var src = BASE_PATH + img.file;
     var slide = document.createElement('div');
-    slide.className = 'flex-shrink-0 reveal-base reveal-child';
+    slide.className = 'flex-shrink-0';
     slide.style.width = '100%';
 
     if (isAvif && !avifOk) {

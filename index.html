@@ -751,7 +751,7 @@ function buildGallery(avifOk) {
     var isAvif = img.ext === 'avif';
     var src = BASE_PATH + img.file;
     var slide = document.createElement('div');
-    slide.className = 'carousel-slide px-1.5 flex-shrink-0 reveal-base reveal-child';
+    slide.className = 'carousel-slide px-1.5 flex-shrink-0';
     slide.style.width = 'calc(100% / ' + perView() + ')';
 
     if (isAvif && !avifOk) {
