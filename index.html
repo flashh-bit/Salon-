@@ -872,21 +872,57 @@ function initDateTimeValidation(dateId, timeId) {
   var timeSelect = document.getElementById(timeId);
   if (!dateInput || !timeSelect) return;
 
-  var today = new Date();
-  var tzOffset = today.getTimezoneOffset() * 60000;
-  var localISOTime = (new Date(Date.now() - tzOffset)).toISOString().slice(0, 10);
-  dateInput.setAttribute('min', localISOTime);
+  function getLocalISO(d) {
+    var tzOffset = d.getTimezoneOffset() * 60000;
+    return (new Date(d.getTime() - tzOffset)).toISOString().slice(0, 10);
+  }
 
   function updateTimeOptions() {
-    var selectedDate = dateInput.value;
     var now = new Date();
-    var isToday = selectedDate === localISOTime;
+    var todayStr = getLocalISO(now);
     
+    // Check if today has any valid slots left
     var options = Array.from(timeSelect.options);
+    var hasSlotsToday = false;
+    
+    options.forEach(function(opt) {
+      if (!opt.value) return;
+      var val = opt.value.split('-')[0].trim();
+      var parts = val.split(' ');
+      var timeParts = parts[0].split(':');
+      var hours = parseInt(timeParts[0], 10);
+      var mins = parseInt(timeParts[1], 10);
+      var ampm = parts[1] ? parts[1].toUpperCase() : '';
+      if (ampm === 'PM' && hours !== 12) hours += 12;
+      if (ampm === 'AM' && hours === 12) hours = 0;
+      var optTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, mins, 0);
+      if (optTime > now) hasSlotsToday = true;
+    });
+
+    // Set min date to tomorrow if today is entirely booked/passed
+    var minDateStr = todayStr;
+    if (!hasSlotsToday) {
+      var tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      minDateStr = getLocalISO(tomorrow);
+    }
+    dateInput.setAttribute('min', minDateStr);
+
+    var selectedDate = dateInput.value;
+    // If they had today selected but today is invalid, clear it
+    if (selectedDate === todayStr && !hasSlotsToday) {
+      dateInput.value = '';
+      selectedDate = '';
+    }
+
+    var isToday = selectedDate === todayStr;
     var firstAvailable = null;
     
     options.forEach(function(opt) {
-      if (!opt.value) return; // skip placeholder
+      if (!opt.value) {
+        opt.text = (selectedDate === todayStr && !hasSlotsToday) ? "No slots left today" : "Select Time Slot";
+        return;
+      }
       
       if (!isToday) {
         opt.disabled = false;
@@ -895,17 +931,14 @@ function initDateTimeValidation(dateId, timeId) {
         return;
       }
       
-      // Extract start time: "11:30 AM - 01:00 PM" -> "11:30 AM" or just "11:30 AM"
       var val = opt.value.split('-')[0].trim();
-      var parts = val.split(' '); // ["11:30", "AM"]
+      var parts = val.split(' ');
       var timeParts = parts[0].split(':');
       var hours = parseInt(timeParts[0], 10);
       var mins = parseInt(timeParts[1], 10);
       var ampm = parts[1] ? parts[1].toUpperCase() : '';
-      
       if (ampm === 'PM' && hours !== 12) hours += 12;
       if (ampm === 'AM' && hours === 12) hours = 0;
-      
       var optTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, mins, 0);
       
       if (optTime <= now) {
