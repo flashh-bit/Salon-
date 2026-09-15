@@ -1050,7 +1050,7 @@ document.addEventListener("DOMContentLoaded", function() {
         obs.unobserve(el);
       }
     });
-  }, { rootMargin: '0px 0px -40px 0px', threshold: 0.05 });
+  }, { rootMargin: '0px 0px -150px 0px', threshold: 0.05 });
 
   // Trigger hero elements instantly with stagger
   var heroEls = document.querySelectorAll('.hero-reveal');
@@ -1059,7 +1059,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Auto-tag ALL section direct children (non-hero) for scroll reveal
-  document.querySelectorAll('section:not(#home) > *').forEach(function(el) {
+  document.querySelectorAll('section:not(#home) > *:not(.grid)').forEach(function(el) {
     if (!el.classList.contains('reveal-base') && !el.classList.contains('hero-reveal')) {
       el.classList.add('reveal-base');
     }

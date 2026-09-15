@@ -1210,7 +1210,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Auto-tag ALL section direct children (non-hero) for scroll reveal
-  document.querySelectorAll('section:not(#hero) > *').forEach(function(el) {
+  document.querySelectorAll('section:not(#hero) > *:not(.grid)').forEach(function(el) {
     if (!el.classList.contains('reveal-base') && !el.classList.contains('hero-reveal')) {
       el.classList.add('reveal-base');
     }
