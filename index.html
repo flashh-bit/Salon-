@@ -728,9 +728,6 @@ const WHATSAPP_NUMBER = '919119076481';
 // To add/remove photos: edit this array only.
 // ============================================================
 const GALLERY_IMAGES = [
-  { file: '3dw5t42yy8y40ef-5ffhgfqrdd.avif',   ext: 'avif', label: 'Bridal Artistry' },
-  { file: '3z6h7xwzhlkq10b-ad2cjkxuxb.avif',   ext: 'avif', label: 'Bridal Makeup' },
-  { file: 'pyvodq3bowxnou6-0x7s6bvg1q.avif',   ext: 'avif', label: 'Bridal Look' },
   { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-67q12d2z9j.avif', ext: 'avif', label: 'Bridal Session' },
   { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-7f82jwlcvt.avif', ext: 'avif', label: 'Bridal Preparation' },
   { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-7r5aay2e7o.avif', ext: 'avif', label: 'Bridal Finish' },
@@ -749,6 +746,10 @@ const GALLERY_IMAGES = [
   { file: 'new_bridal_2.jpeg', ext: 'jpeg', label: 'Bridal Makeover' },
   { file: 'new_bridal_3.jpeg', ext: 'jpeg', label: 'Bridal Makeover' },
   { file: 'new_bridal_4.jpeg', ext: 'jpeg', label: 'Bridal Makeover' },
+  // .webp and .jpg
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-4e6wogrrzw.webp', ext: 'webp', label: 'Salon Work' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-5xuousv2f7.webp', ext: 'webp', label: 'Salon Artistry' },
+  { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-e601mo18qx.jpg',  ext: 'jpg',  label: 'Salon Craft' }
 ];
 
 const BASE_PATH = 'Gallary/bridal/';
@@ -765,6 +766,14 @@ function checkAvif(callback) {
 
 // ---- Build gallery carousel ----
 function buildGallery(avifOk) {
+  // Shuffle array logic
+  for (let i = GALLERY_IMAGES.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = GALLERY_IMAGES[i];
+    GALLERY_IMAGES[i] = GALLERY_IMAGES[j];
+    GALLERY_IMAGES[j] = temp;
+  }
+
   var track = document.getElementById('gallery-track');
   var current = 0;
   var total = GALLERY_IMAGES.length;
