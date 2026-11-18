@@ -647,16 +647,24 @@ input:focus, select:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(194,155,1
 </section>
 <!-- CRAFTSMANSHIP IN FOCUS / VISUAL GALLERY SECTION (#gallery) -->
 <section class="px-4 py-8 bg-surface-raised border-y border-border-subtle reveal-container" id="gallery">
-<div class="mb-5">
+<div class="mb-4">
 <span class="font-label-sm text-accent-rose-muted text-[11px] uppercase tracking-[0.08em] font-semibold block mb-1">
             VISUAL GALLERY
           </span>
 <h2 class="font-headline-md text-text-primary text-xl font-bold tracking-tight">
             Craftsmanship in Focus
           </h2>
-<p class="font-body-sm text-text-secondary text-xs mt-1">
+<p class="font-body-sm text-text-secondary text-xs mt-1 mb-3">
             Moments of quiet refinement, intricate bridal finishes, and timeless aesthetics created right here in Bareilly.
           </p>
+<!-- Filter Buttons -->
+<div class="inline-flex items-center p-1 rounded-lg bg-surface-bright border border-border-subtle gap-1" id="gallery-filters">
+  <button class="gallery-filter-btn px-3 py-1 rounded-md text-[11px] font-semibold transition-all duration-200 bg-primary text-on-primary shadow-xs" data-filter="all">All</button>
+  <button class="gallery-filter-btn px-3 py-1 rounded-md text-[11px] font-semibold transition-all duration-200 text-text-secondary hover:text-text-primary" data-filter="photo">Photos</button>
+  <button class="gallery-filter-btn px-3 py-1 rounded-md text-[11px] font-semibold transition-all duration-200 text-text-secondary hover:text-text-primary flex items-center gap-1" data-filter="video">
+    <span class="material-symbols-outlined text-[13px]">videocam</span>Videos
+  </button>
+</div>
 </div>
 <!-- Real photo gallery carousel — populated from GALLERY_IMAGES array in the JS below -->
 <div class="relative">
@@ -876,6 +884,7 @@ input:focus, select:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(194,155,1
   <button id="lb-prev" aria-label="Previous" style="position:absolute;left:.5rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:#FAF8F5;font-size:1.75rem;padding:.4rem .8rem;cursor:pointer;border-radius:.4rem;">‹</button>
   <button id="lb-next" aria-label="Next" style="position:absolute;right:.5rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:#FAF8F5;font-size:1.75rem;padding:.4rem .8rem;cursor:pointer;border-radius:.4rem;">›</button>
   <img id="lb-img" src="" alt="" class="lb-img-anim" style="max-width:94vw;max-height:82vh;object-fit:contain;border-radius:.5rem;"/>
+  <video id="lb-video" controls muted playsinline class="lb-img-anim" style="display:none;max-width:94vw;max-height:82vh;object-fit:contain;border-radius:.5rem;"></video>
   <p id="lb-caption" style="color:#C29B7F;margin-top:.6rem;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;"></p>
 </div>
 
@@ -904,11 +913,18 @@ var GALLERY_IMAGES = [
   { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-vlmulgvlr8.avif', ext: 'avif', label: 'Bridal Radiance' },
   { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-vrgzawn657.avif', ext: 'avif', label: 'Bridal Grace' },
   { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-yjan5e8y2e.avif', ext: 'avif', label: 'Bridal Beauty' },
+  // .mp4 - Videos
+  { file: 'bridal_video_1.mp4', ext: 'mp4', label: 'Bridal Glimpse', type: 'video' },
   // .jpeg - New images
   { file: 'new_bridal_1.jpeg', ext: 'jpeg', label: 'Bridal Makeover' },
   { file: 'new_bridal_2.jpeg', ext: 'jpeg', label: 'Bridal Makeover' },
   { file: 'new_bridal_3.jpeg', ext: 'jpeg', label: 'Bridal Makeover' },
   { file: 'new_bridal_4.jpeg', ext: 'jpeg', label: 'Bridal Makeover' },
+  { file: 'new_bridal_5.jpeg', ext: 'jpeg', label: 'Bridal Makeover' },
+  { file: 'new_bridal_6.jpeg', ext: 'jpeg', label: 'Bridal Makeover' },
+  { file: 'new_bridal_7.jpeg', ext: 'jpeg', label: 'Bridal Makeover' },
+  { file: 'new_bridal_8.jpeg', ext: 'jpeg', label: 'Bridal Makeover' },
+  { file: 'new_bridal_9.jpeg', ext: 'jpeg', label: 'Bridal Makeover' },
   // .webp and .jpg
   { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-4e6wogrrzw.webp', ext: 'webp', label: 'Salon Work' },
   { file: 'the-looks-family-salon-satipur-road-bareilly-beauty-parlours-for-acne-treatment-5xuousv2f7.webp', ext: 'webp', label: 'Salon Artistry' },
@@ -939,36 +955,66 @@ function buildGallery(avifOk) {
 
   var track = document.getElementById('gallery-track');
   var current = 0;
-  var total = GALLERY_IMAGES.length;
+  var activeFilter = 'all';
+  var visibleList = GALLERY_IMAGES.slice();
 
-  GALLERY_IMAGES.forEach(function(img, idx) {
-    var isAvif = img.ext === 'avif';
-    var src = BASE_PATH + img.file;
-    var slide = document.createElement('div');
-    slide.className = 'flex-shrink-0';
-    slide.style.width = '100%';
+  function renderSlides() {
+    track.innerHTML = '';
+    current = 0;
+    visibleList = GALLERY_IMAGES.filter(function(img) {
+      var isVideo = img.type === 'video' || img.ext === 'mp4';
+      if (activeFilter === 'video') return isVideo;
+      if (activeFilter === 'photo') return !isVideo;
+      return true;
+    });
 
-    if (isAvif && !avifOk) {
-      slide.innerHTML = '<div class="aspect-[4/5] rounded-xl bg-surface-raised flex items-center justify-center text-text-tertiary text-[10px] p-2 text-center">' + img.label + '</div>';
-    } else {
-      var inner = document.createElement('div');
-      inner.className = 'relative rounded-xl overflow-hidden shadow-sm border border-border-subtle cursor-pointer aspect-[4/5] hover-lift';
-      inner.innerHTML =
-        '<picture>' +
-        (isAvif ? '<source srcset="' + src + '" type="image/avif">' : '') +
-        '<img src="' + src + '" alt="' + img.label + '" loading="lazy" class="w-full h-full object-cover object-[center_15%]"/>' +
-        '</picture>' +
-        '<div class="absolute inset-0 bg-gradient-to-t from-surface-dark/80 via-transparent to-transparent flex items-end p-3">' +
-        '<p class="text-[10px] text-accent-champagne uppercase font-semibold tracking-wider">' + img.label + '</p>' +
-        '</div>';
-      inner.addEventListener('click', function() { openLightbox(idx, avifOk); });
-      slide.appendChild(inner);
-    }
-    track.appendChild(slide);
-  });
+    visibleList.forEach(function(img, idx) {
+      var isAvif = img.ext === 'avif';
+      var isVideo = img.type === 'video' || img.ext === 'mp4';
+      var src = BASE_PATH + img.file;
+      var slide = document.createElement('div');
+      slide.className = 'flex-shrink-0';
+      slide.style.width = '100%';
+
+      if (isAvif && !avifOk) {
+        slide.innerHTML = '<div class="aspect-[4/5] rounded-xl bg-surface-raised flex items-center justify-center text-text-tertiary text-[10px] p-2 text-center">' + img.label + '</div>';
+      } else {
+        var inner = document.createElement('div');
+        inner.className = 'relative rounded-xl overflow-hidden shadow-sm border border-border-subtle cursor-pointer aspect-[4/5] hover-lift bg-surface-dark';
+        if (isVideo) {
+          inner.innerHTML =
+            '<video src="' + src + '#t=0.001" preload="metadata" muted playsinline loop autoplay class="w-full h-full object-cover"></video>' +
+            '<div class="absolute inset-0 flex items-center justify-center pointer-events-none">' +
+            '<div class="w-10 h-10 rounded-full bg-surface-dark/70 text-accent-champagne flex items-center justify-center shadow-lg backdrop-blur-sm">' +
+            '<span class="material-symbols-outlined text-[24px] ml-0.5">play_arrow</span>' +
+            '</div>' +
+            '</div>' +
+            '<div class="absolute inset-0 bg-gradient-to-t from-surface-dark/80 via-transparent to-transparent flex items-end p-3">' +
+            '<p class="text-[10px] text-accent-champagne uppercase font-semibold tracking-wider flex items-center gap-1">' +
+            '<span class="material-symbols-outlined text-[14px]">videocam</span>' + img.label + '</p>' +
+            '</div>';
+        } else {
+          inner.innerHTML =
+            '<picture>' +
+            (isAvif ? '<source srcset="' + src + '" type="image/avif">' : '') +
+            '<img src="' + src + '" alt="' + img.label + '" loading="lazy" class="w-full h-full object-cover object-[center_15%]"/>' +
+            '</picture>' +
+            '<div class="absolute inset-0 bg-gradient-to-t from-surface-dark/80 via-transparent to-transparent flex items-end p-3">' +
+            '<p class="text-[10px] text-accent-champagne uppercase font-semibold tracking-wider">' + img.label + '</p>' +
+            '</div>';
+        }
+        inner.addEventListener('click', function() { openLightbox(visibleList, idx, avifOk); });
+        slide.appendChild(inner);
+      }
+      track.appendChild(slide);
+    });
+
+    go(0);
+  }
 
   function go(n) {
-    current = Math.max(0, Math.min(n, total - 1));
+    var total = visibleList.length;
+    current = Math.max(0, Math.min(n, Math.max(0, total - 1)));
     track.style.transform = 'translateX(-' + (current * 100) + '%)';
     document.getElementById('carousel-prev').style.opacity = current === 0 ? '0.35' : '1';
     document.getElementById('carousel-next').style.opacity = current >= total - 1 ? '0.35' : '1';
@@ -985,7 +1031,20 @@ function buildGallery(avifOk) {
     if (Math.abs(dx) > 40) go(dx < 0 ? current + 1 : current - 1);
   }, { passive: true });
 
-  go(0);
+  // Filter click handlers
+  var filterBtns = document.querySelectorAll('#gallery-filters .gallery-filter-btn');
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      activeFilter = this.getAttribute('data-filter');
+      filterBtns.forEach(function(b) {
+        b.className = 'gallery-filter-btn px-3 py-1 rounded-md text-[11px] font-semibold transition-all duration-200 text-text-secondary hover:text-text-primary flex items-center gap-1';
+      });
+      this.className = 'gallery-filter-btn px-3 py-1 rounded-md text-[11px] font-semibold transition-all duration-200 bg-primary text-on-primary shadow-xs flex items-center gap-1';
+      renderSlides();
+    });
+  });
+
+  renderSlides();
 }
 
 // ---- Lightbox ----
@@ -993,9 +1052,12 @@ var lbIndex = 0;
 var lbAvifOk = true;
 var lbOverlay = document.getElementById('lb-overlay');
 var lbImg     = document.getElementById('lb-img');
+var lbVideo   = document.getElementById('lb-video');
 var lbCaption = document.getElementById('lb-caption');
+var lbCurrentList = GALLERY_IMAGES;
 
-function openLightbox(idx, avifOk) {
+function openLightbox(list, idx, avifOk) {
+  lbCurrentList = list || GALLERY_IMAGES;
   lbAvifOk = avifOk;
   lbIndex  = idx;
   showLbImage('none');
@@ -1005,26 +1067,41 @@ function openLightbox(idx, avifOk) {
 }
 
 function showLbImage(direction) {
-  var img   = GALLERY_IMAGES[lbIndex];
+  if (!lbCurrentList.length) return;
+  var img   = lbCurrentList[lbIndex];
   var isAvif = img.ext === 'avif';
+  var isVideo = img.type === 'video' || img.ext === 'mp4';
   
-  if (direction === 'left') lbImg.classList.add('sliding-right');
-  else if (direction === 'right') lbImg.classList.add('sliding-left');
+  if (lbVideo) { lbVideo.pause(); lbVideo.src = ''; lbVideo.style.display = 'none'; }
+  lbImg.style.display = 'none';
 
-  setTimeout(function() {
-    if (isAvif && !lbAvifOk) {
-      lbImg.src = '';
-      lbCaption.textContent = img.label + ' (preview unavailable)';
-    } else {
-      lbImg.src = BASE_PATH + img.file;
-      lbCaption.textContent = img.label;
-    }
-    lbImg.onload = function() { lbImg.classList.remove('sliding-left', 'sliding-right'); };
-    if (lbImg.complete) lbImg.classList.remove('sliding-left', 'sliding-right');
-  }, direction === 'none' ? 0 : 200);
+  if (isVideo) {
+    lbVideo.src = BASE_PATH + img.file;
+    lbVideo.muted = true;
+    lbVideo.style.display = 'block';
+    lbCaption.textContent = img.label;
+    lbVideo.play().catch(function(){});
+  } else {
+    lbImg.style.display = 'block';
+    if (direction === 'left') lbImg.classList.add('sliding-right');
+    else if (direction === 'right') lbImg.classList.add('sliding-left');
+
+    setTimeout(function() {
+      if (isAvif && !lbAvifOk) {
+        lbImg.src = '';
+        lbCaption.textContent = img.label + ' (preview unavailable)';
+      } else {
+        lbImg.src = BASE_PATH + img.file;
+        lbCaption.textContent = img.label;
+      }
+      lbImg.onload = function() { lbImg.classList.remove('sliding-left', 'sliding-right'); };
+      if (lbImg.complete) lbImg.classList.remove('sliding-left', 'sliding-right');
+    }, direction === 'none' ? 0 : 200);
+  }
 }
 
 function closeLightbox() {
+  if (lbVideo) { lbVideo.pause(); lbVideo.src = ''; }
   lbOverlay.classList.remove('active');
   setTimeout(function() { lbOverlay.style.display = 'none'; }, 250);
   document.body.style.overflow = '';
@@ -1033,12 +1110,12 @@ function closeLightbox() {
 document.getElementById('lb-close').addEventListener('click', closeLightbox);
 document.getElementById('lb-prev').addEventListener('click', function(e) {
   e.stopPropagation();
-  lbIndex = (lbIndex - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
+  lbIndex = (lbIndex - 1 + lbCurrentList.length) % lbCurrentList.length;
   showLbImage('right');
 });
 document.getElementById('lb-next').addEventListener('click', function(e) {
   e.stopPropagation();
-  lbIndex = (lbIndex + 1) % GALLERY_IMAGES.length;
+  lbIndex = (lbIndex + 1) % lbCurrentList.length;
   showLbImage('left');
 });
 document.addEventListener('keydown', function(e) {
